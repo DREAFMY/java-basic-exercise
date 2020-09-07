@@ -5,19 +5,18 @@ import java.util.stream.Collectors;
 
 public class GrammarExercise {
     public static void main(String[] args) {
-        //需要从命令行读入
         Scanner myIn = new Scanner(System.in);
+        System.out.print("firstWordList:");
         String firstWordList = myIn.nextLine();
+        System.out.print("secondWordList:");
         String secondWordList = myIn.nextLine();
 
         List<String> result = findCommonWordsWithSpace(firstWordList,secondWordList);
-        //按要求输出到命令行
         System.out.println(Arrays.toString(result.toArray()));
 
     }
 
     public static List<String> findCommonWordsWithSpace(String firstWordList, String secondWordList) {
-        //在这编写实现代码
         String regex = "^[A-Za-z]*([A-Za-z]+[,])*([A-Za-z]+)$";
         if (firstWordList.matches(regex) && secondWordList.matches(regex)){
             List<String> strs1 = Arrays.asList(firstWordList.toLowerCase().split(","));
